@@ -48,4 +48,4 @@ Requirements are **Ruby 3.1.0**, using **RVM** for version management, and **Rsp
 
 ## Testing
 - for tests, run
-`bundle exec rspec lib/main_rspec.rb`
+`bundle exec rspec lib/parser_spec.rb`

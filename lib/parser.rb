@@ -2,8 +2,7 @@ class Parser
   def initialize(file)
     @file = file
     unless File.exist?(@file)
-      p "Arquivo não encontrado"
-      exit
+      raise StandardError.new "Arquivo não encontrado"
     end
   end
     

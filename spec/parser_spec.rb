@@ -1,9 +1,9 @@
-require_relative '../lib/manipulation'
+require_relative '../lib/parser'
 
 describe '#get_first_line' do
   context 'if file exists' do
-    it 'it returns true' do 
-      expect(File.exist?('games.log')).to be(true) 
+    it 'and matches error' do 
+      expect { Parser.new('any.log') }.to raise_error("Arquivo não encontrado")
     end
   end
 
