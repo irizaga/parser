@@ -1,14 +1,16 @@
 require_relative '../lib/manipulation'
 
-
-describe Parser do
-    it 'file exists' do
-        expect(File.exist?('games.log')).to be(true)
+describe '#get_first_line' do
+  context 'if file exists' do
+    it 'it returns true' do 
+      expect(File.exist?('games.log')).to be(true) 
     end
+  end
 
-    it 'print first line' do
-        data = File.open('games.log')
-        expect(data.readline.rstrip).to match("  0:00 ------------------------------------------------------------")
-        data.close
+  context 'first line' do
+    it 'matches string in file' do 
+        data = Parser.new('games.log')
+        expect(data.get_first_line).to match("  0:00 ------------------------------------------------------------\n")
     end
+  end
 end

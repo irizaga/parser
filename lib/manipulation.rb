@@ -1,14 +1,14 @@
 class Parser
-    def initialize(file)
-        @file = file
-    end
+  def initialize(file)
+    @file = file
+  end
     
-    def openfile
-        unless File.exist?(@file)
-            puts "Arquivo não encontrado"
-        else
-            data = File.open(@file, &:readline)
-            puts data
-        end
+  def get_first_line
+    unless File.exist?(@file)
+      p "Arquivo não encontrado"
+    else
+      data = File.open(@file, &:readline)
+      p data
     end
+  end
 end
