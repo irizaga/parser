@@ -8,6 +8,5 @@ class Parser
     
   def get_first_line
       data = File.open(@file, &:readline)
-      p data
   end
 end
