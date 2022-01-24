@@ -15,7 +15,7 @@ class Parser
     @data.first
   end
 
-  def line_count
+  def log_json
     result = {
       "games.log": {
         "lines": @data.size

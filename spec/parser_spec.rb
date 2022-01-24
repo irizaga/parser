@@ -1,8 +1,8 @@
 require_relative '../lib/parser'
 
 describe Parser do
-  describe '#file_exist' do
-    it 'and raises error' do
+  describe '#initialize' do
+    it 'raises error' do
       expect { Parser.new('any.log') }.to raise_error('Arquivo não encontrado')
     end
   end
@@ -14,10 +14,10 @@ describe Parser do
     end
   end
 
-  describe '#line_count' do
+  describe '#log_json' do
     it 'returns correct output' do
       data = Parser.new('games.log')
-      expect(data.line_count).to match("{\"games.log\":{\"lines\":5306}}")
+      expect(data.log_json).to match("{\"games.log\":{\"lines\":5306}}")
     end
   end
 end
