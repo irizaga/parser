@@ -1,8 +1,8 @@
 require_relative '../lib/parser'
 
 describe Parser do
-  describe '.exist?' do
-    it 'raises error' do
+  describe '#file_exist' do
+    it 'and raises error' do
       expect { Parser.new('any.log') }.to raise_error('Arquivo não encontrado')
     end
   end
