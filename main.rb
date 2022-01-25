@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'lib/parser'
 
 file = Parser.new('games.log')

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/parser'
 
 describe Parser do
@@ -17,7 +19,7 @@ describe Parser do
   describe '#log_json' do
     it 'returns correct output' do
       data = Parser.new('games.log')
-      expect(data.log_json).to match("{\"games.log\":{\"lines\":5306}}")
+      expect(data.log_json).to match('{\"games.log\":{\"lines\":5306}}')
     end
   end
 end
