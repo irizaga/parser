@@ -17,11 +17,26 @@ class Parser
   end
 
   def log_json
-    result = {
-      "games.log": {
-        "lines": @data.size
+    {
+      'games.log': {
+        lines: @data.size,
+        players: player_names
       }
     }
-    result.to_json
+  end
+
+  private
+
+  def player_names
+    players = []
+    @data.each do |line|
+      next unless line.include? 'killed'
+
+      player1 = line.split('killed')[0].split[5..].join
+      player2 = line.split('killed')[1].split[..-3].join
+      players << player1 << player2
+    end
+    players.delete('<world>')
+    players.uniq
   end
 end
