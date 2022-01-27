@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 require 'json'
 
+# log parser class
 class Parser
   def initialize(file)
     @file = file
 
-    unless File.exist?(file)
-      raise ArgumentError, 'Arquivo não encontrado', caller
-    end
+    raise ArgumentError, 'Arquivo não encontrado', caller unless File.exist?(file)
 
     @data = File.readlines(file)
   end
