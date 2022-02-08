@@ -19,8 +19,7 @@ describe Parser do
   describe '#log_json' do
     it 'returns correct output' do
       data = Parser.new('spec/fixture/games_test.log')
-      expect(data.log_json.to_json).to match("{\"games.log\":{\"lines\":158,\"players\":" +
-        "[\"Isgalamido\",\"Mocinha\",\"Zeh\",\"DonodaBola\"]}}")
+      expect(data.log_json).to match({:"games.log"=>{:lines=>158, :players=>["Isgalamido", "Mocinha", "Zeh", "DonodaBola"]}})
     end
   end
 end
